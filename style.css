@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+h1 {
+    margin: 0;
+    margin-top: 450px;
+}
+h1::before {
+    content: "Супер ";
+    color: rgb(223, 188, 35);
+}
+/* Сброс настроек */
+header {
+    height: 100px;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__nav {
+    display: flex;
+    gap: 90px;
+    align-items: center;
+    padding-right: 1px;
+}
+.banner {
+    height: 80vh;
+    background: url(images/Background.jpg) no-repeat center / cover;
+    /* center/cover для того чтобы картинка растянулась на весь экран */
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    position: relative;
+}
+.banner h1 {
+    position: relative;
+    z-index: 2;
+    
+}
+.banner::before {
+    content: "";
+    background-color: #0006;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.info {
+    background-color: rgb(178, 106, 192);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+.info__card {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 4px;
+    color: rgb(223, 188, 35);
+    display: flex;
+    gap: 20px;
+}
+.info__card i {
+    font-size: 2em;
+    /* в 2 раза больше размера родителя */
+}
+.container {
+    padding-left: calc(50% - 600px);
+    padding-right: calc(50% - 600px);
+}
+
+@media (min-width: 600px) and (max-width: 1199px) {
+    .container {
+        padding: 50px;   
+    }
+    header {
+        height: auto;
+    }
+    .info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 599px) {
+    header {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .container {
+        padding: 10px;
+    }
+    .info {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+}
