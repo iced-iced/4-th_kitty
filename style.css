@@ -13,6 +13,7 @@ h1 {
 h1::before {
     content: "Супер ";
     color: rgb(223, 188, 35);
+    animation: crossHeight 0.5s;
 }
 /* Сброс настроек */
 header {
